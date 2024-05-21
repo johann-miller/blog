@@ -1,4 +1,8 @@
+<script>
+    import Katex from 'svelte-katex'
+</script>
+
 <h1>Drew's mathematics blog</h1>
 
-<span>Here is an example of inline math $x+1=2$</span>
+<Katex>x+y^2=3</Katex>
 <a href="/topic">Go to topic</a>
