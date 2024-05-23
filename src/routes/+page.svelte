@@ -1,32 +1,20 @@
 <script>
     import { afterUpdate } from "svelte";
+    import { renderMath } from "$lib/renderMath.js"
 
     let container;
 
-    function renderMath() {
-        renderMathInElement(container, {
-            // customised options
-            // • auto-render specific keys, e.g.:
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true },
-            ],
-            // • rendering keys, e.g.:
-            throwOnError: false,
-        });
-    }
-
-    afterUpdate(renderMath);
+    afterUpdate(() => {
+        if (container) {
+            renderMath(container)
+        }
+    });
 </script>
 
 <h1>Drew's mathematics blog</h1>
 
-<a href="/topic">Go to topic</a>
+<a href="/topics">Go to topics</a>
 
 <div bind:this={container}>
-    <!-- Your content goes here -->
-    <a href="#">Click me</a>
-    <p>Some math: $E=mc^2$</p>
+    <p>Some math: $g \in G$</p>
 </div>
