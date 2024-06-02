@@ -6,7 +6,7 @@
     let content = contentData.content;
 </script>
 
-<h1>Drew's mathematics blog</h1>
+<h1>Drew's blog</h1>
 
 <article use:renderMath>
     {@html content}
