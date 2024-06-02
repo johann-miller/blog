@@ -7,6 +7,14 @@
 
 <h1>Drew's mathematics blog</h1>
 
-<div use:renderMath>
+<article id="main" use:renderMath>
     {@html content}
-</div>
+</article>
+
+<style>
+    #main {
+        width: 48rem;
+        font-size: 1.2rem;
+        line-height: 2;
+    }
+</style>

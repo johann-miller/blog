@@ -7,4 +7,8 @@
     <a href="/topics">Topics</a>
 </nav>
 
+<style>
+
+</style>
+
 <slot></slot>
