@@ -3,41 +3,78 @@
     import { renderMath } from "$lib/renderMath.js";
 </script>
 
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/topics">Algebra</a></li>
-        <li><a href="/topics">Calculus</a></li>
-        <li><a href="/topics">Trigonometry</a></li>
-        <li><a href="/topics">Geometry</a></li>
-        <li><a href="/topics">All topics</a></li>
-    </ul>
-</nav>
+<div id="header-container">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/topics">Algebra</a></li>
+            <li><a href="/topics">Calculus</a></li>
+            <li><a href="/topics">Trigonometry</a></li>
+            <li><a href="/topics">Geometry</a></li>
+            <li><a href="/topics">All topics</a></li>
+        </ul>
+    </nav>
 
-<h1>Drew's blog of things</h1>
-<img id="header-image" src={painting} alt="painting" />
+    <div id="title-container">
+        <h1>Drew's blog of things</h1>
+        <img id="header-image" src={painting} alt="painting" />
+    </div>
+</div>
 
 <div id="main-container">
     <slot></slot>
+    <footer>
+        Errors? Comments? EMAIL <span class="dash">-</span> Copyright Drew, 2024
+    </footer>
 </div>
 
-<footer>Errors? Comments? EMAIL <span class="dash">-</span> Copyright Drew, 2024</footer>
-
 <style>
+    #header-container {
+        display: flex;
+        flex-direction: column;
+        height: 15rem;
+    }
+
+    #title-container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        position: relative;
+        height: 16rem;
+        margin-top: 1rem;
+    }
+
+    #title-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Ensure the image is behind the content */
+    }
+
     h1 {
+        margin: 1rem 0;
+        padding: 0.5rem 0;
         text-align: center;
-        border-left: 3px solid #bebebe;
+        color: white;
+        background-color: #bebebe5d;
     }
 
     #header-image {
         width: 100vw;
-        max-height: 12rem;
+        position: absolute;
+        height: 5rem;
         object-fit: cover;
     }
 
     #main-container {
+        min-height: calc(100vh - 16rem); /* To calculate rem, add height and margin-top from #title-container */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: auto;
-        margin: 0 auto 10rem auto;
+        margin: 1rem auto 0 1rem;
     }
 
     .dash {
@@ -46,12 +83,10 @@
 
     footer {
         text-align: center;
-        font-size: 0.8rem;
-        padding: 0;
+        font-size: 90%;
+        padding: 1rem 0;
         width: 100%;
-        position: sticky;
-        height: 3rem;
-        top: calc(100vh - 3rem);
+        margin-top: 8rem;
     }
 
     nav {
