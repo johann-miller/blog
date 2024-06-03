@@ -5,7 +5,7 @@
 </script>
 
 <article use:renderMath>
-    <h2>Lorem ipsum</h2>
+    <h1>Lorem ipsum</h1>
     {#each contentData.blogPost as paragraph}
     <p>{paragraph}</p>
     {/each}

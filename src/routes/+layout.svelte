@@ -1,80 +1,78 @@
 <script defer>
-    import painting from "$lib/assets/painting.jpg";
+    import painting from "$lib/assets/painting3.jpg";
     import { renderMath } from "$lib/renderMath.js";
 </script>
 
 <div id="header-container">
     <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
+        <ul use:renderMath>
+            <li><a href="/" class="home-link">Drew's nook</a></li>
+            <li></li>
+            <li><span>$\cdot$</span></li>
             <li><a href="/topics">Algebra</a></li>
             <li><a href="/topics">Calculus</a></li>
-            <li><a href="/topics">Trigonometry</a></li>
-            <li><a href="/topics">Geometry</a></li>
+            <li><a href="/topics">CAD</a></li>
             <li><a href="/topics">All topics</a></li>
         </ul>
     </nav>
 
-    <div id="title-container">
-        <h1>Drew's blog of things</h1>
-        <img id="header-image" src={painting} alt="painting" />
-    </div>
+    <img id="header-image" src={painting} alt="painting" />
+    <span class="image-credit">"Harvest in Ukraine" - Vladimir Orlovsky</span>
 </div>
 
 <div id="main-container">
     <slot></slot>
-    <footer>
-        Errors? Comments? EMAIL <span class="dash">-</span> Copyright Drew, 2024
+    <footer use:renderMath>
+        Comments? Corrections? Cocktails? <span class="dash">-</span>
+        drewsnook@gmail.com <span class="dash">-</span> Copyright 2024
     </footer>
 </div>
 
 <style>
     #header-container {
+        position: relative;
         display: flex;
         flex-direction: column;
-        height: 15rem;
+        height: 18rem;
     }
 
-    #title-container {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        position: relative;
-        height: 16rem;
-        margin-top: 1rem;
-    }
-
-    #title-container img {
+    .image-credit {
         position: absolute;
-        top: 0;
-        left: 0;
+        bottom: 0;
+        right: 0;
         width: 100%;
-        height: 100%;
-        z-index: -1; /* Ensure the image is behind the content */
+        padding-right: 1rem;
+        text-align: right;
+        font-size: 80%;
+        font-style: italic;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.329);
     }
 
-    h1 {
-        margin: 1rem 0;
-        padding: 0.5rem 0;
-        text-align: center;
-        color: white;
-        background-color: #bebebe5d;
+    .home-link {
+        font-style: italic;
+        font-weight: lighter;
     }
 
     #header-image {
         width: 100vw;
-        position: absolute;
-        height: 5rem;
+        height: 100%;
         object-fit: cover;
     }
 
     #main-container {
-        min-height: calc(100vh - 16rem); /* To calculate rem, add height and margin-top from #title-container */
+        width: auto;
+        max-width: 40rem;
+        padding: 0 1rem;
+        min-height: calc(
+            100vh - 19rem
+        ); /* To calculate rem, add height and margin-top from #title-container */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         width: auto;
-        margin: 1rem auto 0 1rem;
+        margin: 1rem auto 0 auto;
     }
 
     .dash {
@@ -83,21 +81,21 @@
 
     footer {
         text-align: center;
-        font-size: 90%;
-        padding: 1rem 0;
+        font-size: 80%;
+        padding: 0.5rem 0;
         width: 100%;
         margin-top: 8rem;
     }
 
     nav {
-        margin-top: 1rem;
+        margin: 1rem 0;
         background-color: default;
         display: flex;
     }
 
     nav ul {
         list-style: none;
-        margin: 0.5rem 0 0 0;
+        margin: 0;
         padding: 0;
         display: flex;
         flex: 1;

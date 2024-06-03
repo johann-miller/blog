@@ -3,7 +3,7 @@
 </script>
 
 <article>
-    <h2>Topics</h2>
+    <h1>Topics</h1>
     <a href="/">Go home</a>
 
     <ul use:renderMath>
