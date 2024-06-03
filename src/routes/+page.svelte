@@ -1,17 +1,16 @@
 <script>
-    import { renderMath } from "$lib/renderMath.js"
-    import contentData from '../data/content.json';
-    import '../style/global.css'
-
-    let content = contentData.content;
+    import { renderMath } from "$lib/renderMath.js";
+    import contentData from "../data/content.json";
+    import "../style/global.css";
 </script>
 
-<h1>Drew's blog</h1>
-
 <article use:renderMath>
-    {@html content}
+    <h2>Lorem ipsum</h2>
+    {#each contentData.blogPost as paragraph}
+    <p>{paragraph}</p>
+    {/each}
 </article>
 
 <style>
-
+    
 </style>

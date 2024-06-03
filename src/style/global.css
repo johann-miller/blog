@@ -1,5 +1,16 @@
+html {
+    font-size: 20px;
+}
+
 article {
-    width: 48rem;
-    font-size: 1.2rem;
+    width: 100%-2rem;
+    max-width: 44rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+    font-size: 1.0rem;
     line-height: 2;
+}
+
+body {
+    margin: 0;
 }
