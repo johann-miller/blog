@@ -29,11 +29,18 @@
 </div>
 
 <style>
+    /* Header Styles */
     #header-container {
         position: relative;
         display: flex;
         flex-direction: column;
         height: 18rem;
+    }
+
+    #header-image {
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
     }
 
     .image-credit {
@@ -49,19 +56,8 @@
         background-color: rgba(0, 0, 0, 0.329);
     }
 
-    .home-link {
-        font-style: italic;
-        font-weight: lighter;
-    }
-
-    #header-image {
-        width: 100vw;
-        height: 100%;
-        object-fit: cover;
-    }
-
+    /* Main Container Styles */
     #main-container {
-        width: auto;
         max-width: 40rem;
         padding: 0 1rem;
         min-height: calc(
@@ -71,25 +67,12 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: auto;
-        margin: 1rem auto 0 auto;
+        margin: 1rem auto 0;
     }
 
-    .dash {
-        color: #bebebe;
-    }
-
-    footer {
-        text-align: center;
-        font-size: 80%;
-        padding: 0.5rem 0;
-        width: 100%;
-        margin-top: 8rem;
-    }
-
+    /* Navigation Styles */
     nav {
         margin: 1rem 0;
-        background-color: default;
         display: flex;
     }
 
@@ -118,5 +101,24 @@
 
     nav ul li a:hover {
         border-color: #bebebe;
+    }
+
+    /* Footer Styles */
+    footer {
+        text-align: center;
+        font-size: 80%;
+        padding: 0.5rem 0;
+        width: 100%;
+        margin-top: 8rem;
+    }
+
+    /* Additional Styles */
+    .home-link {
+        font-style: italic;
+        font-weight: lighter;
+    }
+
+    .dash {
+        color: #bebebe;
     }
 </style>
