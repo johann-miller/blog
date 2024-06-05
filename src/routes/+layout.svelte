@@ -7,7 +7,6 @@
     <nav>
         <ul use:renderMath>
             <li><a href="/" class="home-link">Drew's nook</a></li>
-            <li></li>
             <li><span>$\cdot$</span></li>
             <li><a href="/topics">Algebra</a></li>
             <li><a href="/topics">Calculus</a></li>
