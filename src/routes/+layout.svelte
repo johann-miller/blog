@@ -22,7 +22,7 @@
 <div id="main-container">
     <slot></slot>
     <footer use:renderMath>
-        Comments? Corrections? Cocktails? <span class="dash">-</span>
+        Comments? Corrections? <span class="dash">-</span>
         drewsnook@gmail.com <span class="dash">-</span> Copyright 2024
     </footer>
 </div>
