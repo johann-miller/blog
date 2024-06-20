@@ -1,4 +1,7 @@
-function parseMarkdown(markdown) {
+export function parseMarkdown(markdown) {
+    // Replace headers (e.g., # Header) with HTML <h1> tags
+    markdown = markdown.replace(/^#\s+(.*)$/gm, '<h1>$1</h1>');
+
     // Replace headers (e.g., ## Header) with HTML <h2> tags
     markdown = markdown.replace(/^##\s+(.*)$/gm, '<h2>$1</h2>');
 
@@ -14,23 +17,11 @@ function parseMarkdown(markdown) {
     // Replace links (e.g., [link](https://example.com)) with HTML <a> tags
     markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
 
-    // Replace paragraphs (e.g., paragraph) with HTML <p> tags
-    markdown = markdown.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    // Split markdown into paragraphs
+    const paragraphs = markdown.split('\n\n');
+
+    // Convert each paragraph into HTML without <p> tags
+    markdown = paragraphs.map(p => p.trim() ? `<p>${p}</p>` : p).join('');
 
     return markdown;
 }
-
-const markdown = `
-## Header
-
-*Italic* and **bold** text.
-
-\`Inline code\`.
-
-[Link](https://example.com).
-
-Paragraph.
-`;
-
-const html = parseMarkdown(markdown);
-console.log(html);

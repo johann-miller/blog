@@ -1,1 +1,0 @@
-# Post 3 from markdown!
