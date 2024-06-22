@@ -5,7 +5,7 @@
     import "../style/global.css";
 </script>
 
-<div id="header-container">
+<header class="header-container">
     <nav>
         <ul use:renderMath>
             <li><a href="/" class="home-link">Drew's nook</a></li>
@@ -17,8 +17,12 @@
         </ul>
     </nav>
 
-    <img id="header-image" src={painting} alt="painting" />
+    <img class="header-image" src={painting} alt="painting" />
     <span class="image-credit">"Harvest in Ukraine" - Vladimir Orlovsky</span>
+</header>
+
+<div>
+
 </div>
 
 <div id="main-container">
@@ -31,14 +35,18 @@
 
 <style>
     /* Header Styles */
-    #header-container {
+    .header-container {
         position: relative;
         display: flex;
         flex-direction: column;
         height: 18rem;
     }
 
-    #header-image {
+    .printed-header {
+        display: none;
+    }
+
+    .header-image {
         width: 100vw;
         height: 100%;
         object-fit: cover;
@@ -127,5 +135,15 @@
 
     .dash {
         color: #bebebe;
+    }
+
+    @media print {
+      .header-container {
+        display: none;
+      }
+
+      footer {
+        margin-top: 0;
+      }
     }
 </style>

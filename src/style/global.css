@@ -10,6 +10,14 @@ article {
 
 body {
     margin: 0;
-    background-color: #000020;
-    color: white;
+    background-color: white;
+    color: black;
+}
+
+@media print {
+    article {
+        font-size: 11pt !important;
+        line-height: normal;
+        width: 12.6cm;
+    }
 }

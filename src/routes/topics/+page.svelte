@@ -14,7 +14,7 @@
             <h2 id="{topic.name}">{topic.name}</h2>
             <ol>
                 {#each topic.posts as post}
-                    <li><a href="/topics/{topic.name}/{post.filename}" class="post-links">{post.title}, {post.date}</a></li>
+                    <li><a href="/topics/{topic.name}/{post.filename}" class="post-links">{post.title}</a></li>
                 {/each}
             </ol>
         {/each}
