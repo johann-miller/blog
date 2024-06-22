@@ -1,21 +1,39 @@
 <script>
     import { renderMath } from "$lib/renderMath.js";
     import { onMount } from "svelte";
-    import topics from "../../data/topics.json"
-    import posts from "../../data/posts.json"
-    
-    onMount(async () =>{
-        console.log(topics)
-    })
+    import topics from "../../data/topics.json";
+
+    onMount(async () => {});
 </script>
 
-<article>
-    <h1>Topics</h1>
-    <a href="/">Go home</a>
+<h1>Topics</h1>
 
-    <ul use:renderMath>
-        <li><a href="topics/calculus/post2">Post 1</a></li>
-        <li><a href="topics/algebra/post2">Post 2</a></li>
-        <li><a href="topics/trigonometry/post3">Post 3</a></li>
-    </ul>
-</article>
+<ul use:renderMath class="topics">
+    <li>
+        {#each topics as topic}
+            <h2 id="{topic.name}">{topic.name}</h2>
+            <ol>
+                {#each topic.posts as post}
+                    <li><a href="/topics/{topic.name}/{post.filename}" class="post-links">{post.title}, {post.date}</a></li>
+                {/each}
+            </ol>
+        {/each}
+    </li>
+</ul>
+
+<style>
+    h1 {
+        text-align: center;
+    }
+    .topics {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+    .topics li h2::first-letter {
+        text-transform: uppercase;
+    }
+    .post-links {
+        text-decoration: none;
+    }
+</style>

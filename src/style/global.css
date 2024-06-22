@@ -5,8 +5,11 @@ html {
 article {
     font-size: 1.0rem;
     line-height: 2;
+    width: 100%;
 }
 
 body {
     margin: 0;
+    background-color: #000020;
+    color: white;
 }

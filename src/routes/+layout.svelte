@@ -1,6 +1,8 @@
 <script defer>
     import painting from "$lib/assets/painting3.jpg";
     import { renderMath } from "$lib/renderMath.js";
+    import topics from "../data/topics.json";
+    import "../style/global.css";
 </script>
 
 <div id="header-container">
@@ -8,9 +10,9 @@
         <ul use:renderMath>
             <li><a href="/" class="home-link">Drew's nook</a></li>
             <li><span>$\cdot$</span></li>
-            <li><a href="/topics">Algebra</a></li>
-            <li><a href="/topics">Calculus</a></li>
-            <li><a href="/topics">CAD</a></li>
+            {#each topics as topic}
+            <li><a href="/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
+            {/each}
             <li><a href="/topics">All topics</a></li>
         </ul>
     </nav>
@@ -90,7 +92,7 @@
     }
 
     nav ul li a {
-        color: black;
+        color: inherit;
         text-decoration: none;
         padding: 0.25rem;
         margin: 0.25rem;
@@ -101,6 +103,12 @@
     nav ul li a:hover {
         border-color: #bebebe;
     }
+
+    .capitalize{
+        text-transform: capitalize;
+    }
+
+
 
     /* Footer Styles */
     footer {
