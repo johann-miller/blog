@@ -100,7 +100,7 @@
         text-decoration: none;
         padding: 0.25rem;
         margin: 0.25rem;
-        border-bottom: 2px solid transparent;
+        border-bottom: 1px solid transparent;
         transition: border-color 0.3s ease;
     }
 

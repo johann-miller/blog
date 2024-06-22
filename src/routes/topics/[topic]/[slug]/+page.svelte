@@ -46,12 +46,33 @@
 
 <article bind:this={articleElement} on:change={parsedMarkdown}>
     {#if parsedMarkdown}
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.author} - {frontmatter.date}</h2>
+        <h1 class="title">{frontmatter.title}</h1>
+        <h2 class="subtitle">{frontmatter.author} - {frontmatter.date}</h2>
         {@html parsedMarkdown}
     {/if}
 </article>
 
 <style>
     /* Todo: style frontmatter */
+    .title {
+        margin-bottom: 0;
+    }
+    .subtitle {
+        margin-top: 0;
+        margin-bottom: 3rem;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+        font-weight: normal;
+        border-bottom: 1px solid #bebebe;
+    }
+
+    @media print {
+        .title {
+            margin-bottom: 0.5cm;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 11pt;
+        }
+    }
 </style>
