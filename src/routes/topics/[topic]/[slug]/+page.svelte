@@ -59,8 +59,8 @@
     }
     .subtitle {
         margin-top: 0;
-        margin-bottom: 3rem;
-        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 0.5rem;
         font-size: 1rem;
         font-weight: normal;
         border-bottom: 1px solid #bebebe;

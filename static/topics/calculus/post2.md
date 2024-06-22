@@ -1,5 +1,5 @@
 ---
-title: Example calculus document
+title: Example calculus document $\sum a_nx^n$
 author: Drew Miller
 date: January 1st, 2000
 ---

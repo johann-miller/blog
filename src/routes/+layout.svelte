@@ -1,5 +1,5 @@
 <script defer>
-    import painting from "$lib/assets/painting3.jpg";
+    import painting from "$lib/assets/pic4.jpg";
     import { renderMath } from "$lib/renderMath.js";
     import topics from "../data/postsData.json";
     import "../style/global.css";
