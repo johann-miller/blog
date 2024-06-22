@@ -24,3 +24,19 @@ export function findPost(topicName, filename) {
 
   return null; // Return null if the post is not found
 }
+
+export function parseFrontmatter(markdown) {
+  const frontmatter = {};
+  const metadataRegex = /^---([\s\S]*?)---/; // Regex to match YAML front matter
+  const match = metadataRegex.exec(markdown);
+
+  if (match) {
+    const metadataLines = match[1].trim().split('\n');
+    metadataLines.forEach(line => {
+      const [key, value] = line.split(':').map(part => part.trim());
+      frontmatter[key] = value;
+    });
+  }
+
+  return frontmatter;
+}

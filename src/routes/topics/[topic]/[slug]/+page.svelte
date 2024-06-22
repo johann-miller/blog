@@ -1,17 +1,19 @@
 <script>
     import { onMount, afterUpdate } from "svelte";
     import { page } from "$app/stores";
-    import { parseMarkdown } from "$lib/markdownParser.js";
+    import { parseMarkdown, parseFrontmatter } from "$lib/markdownParser.js";
     import { renderMath } from "$lib/renderMath.js";
     import "../../../../style/global.css";
-    import "../../../../data/posts.json"
+    import { findPost } from "$lib/postUtils.js";
 
     // Bind articleElement to the article tag
     let articleElement;
     let params;
+    let frontmatter;
     $: params = $page.params;
 
     export let markdownContent = "";
+    let parsedMarkdown;
 
     // Function to re-render KaTeX math on updated content
     function reRenderMath() {
@@ -22,13 +24,16 @@
 
     onMount(async () => {
         try {
+            let topic = params.topic;
+
             const response = await fetch(
-                `/topics/${params.topic}/${params.slug}.md`,
+                `/topics/${topic}/${params.slug}.md`,
             );
             if (response.ok) {
                 markdownContent = await response.text();
-                // console.log("Fetched markdown content: " + `/topics/${params.topic}/${params.slug}.md`);
-                markdownContent = parseMarkdown(markdownContent)
+                frontmatter = parseFrontmatter(markdownContent)
+                console.log(frontmatter)
+                parsedMarkdown = parseMarkdown(markdownContent);
             } else {
                 console.error("Failed to fetch Markdown content");
             }
@@ -40,6 +45,10 @@
     afterUpdate(reRenderMath);
 </script>
 
-<article bind:this={articleElement} on:change={markdownContent}>
-    {@html markdownContent}
+<article bind:this={articleElement} on:change={parsedMarkdown}>
+    {#if parsedMarkdown}
+        <h1>{frontmatter.title}</h1>
+        <h2>{frontmatter.author} - {frontmatter.date}</h2>
+        {@html parsedMarkdown}
+    {/if}
 </article>

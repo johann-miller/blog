@@ -1,4 +1,8 @@
-# Example calculus post $f(x)=x^2$
+---
+title: Example calculus document
+author: Drew Miller
+date: January 1st, 2000
+---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, $x^2 + y^2 = z^2$, magna in consectetur commodo. 
 

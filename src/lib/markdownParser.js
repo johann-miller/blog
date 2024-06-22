@@ -1,4 +1,12 @@
 export function parseMarkdown(markdown) {
+    // Check for and remove YAML front matter
+    const frontmatterRegex = /^---([\s\S]*?)---/;
+    const match = frontmatterRegex.exec(markdown);
+
+    if (match) {
+        markdown = markdown.slice(match[0].length).trim(); // Remove front matter
+    }
+
     // Replace headers (e.g., # Header) with HTML <h1> tags
     markdown = markdown.replace(/^#\s+(.*)$/gm, '<h1>$1</h1>');
 
@@ -24,4 +32,20 @@ export function parseMarkdown(markdown) {
     markdown = paragraphs.map(p => p.trim() ? `<p>${p}</p>` : p).join('');
 
     return markdown;
+}
+
+export function parseFrontmatter(markdown) {
+    const frontmatter = {};
+    const metadataRegex = /^---([\s\S]*?)---/; // Regex to match YAML front matter
+    const match = metadataRegex.exec(markdown);
+
+    if (match) {
+        const metadataLines = match[1].trim().split('\n');
+        metadataLines.forEach(line => {
+            const [key, value] = line.split(':').map(part => part.trim());
+            frontmatter[key] = value;
+        });
+    }
+
+    return frontmatter;
 }
