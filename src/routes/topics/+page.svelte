@@ -1,5 +1,12 @@
 <script>
     import { renderMath } from "$lib/renderMath.js";
+    import { onMount } from "svelte";
+    import topics from "../../data/topics.json"
+    import posts from "../../data/posts.json"
+    
+    onMount(async () =>{
+        console.log(topics)
+    })
 </script>
 
 <article>

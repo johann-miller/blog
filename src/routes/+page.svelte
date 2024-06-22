@@ -7,10 +7,9 @@
 <article use:renderMath>
     <h1>Lorem ipsum</h1>
     {#each contentData.blogPost as paragraph}
-    <p>{paragraph}</p>
+        <p>{paragraph}</p>
     {/each}
 </article>
 
 <style>
-    
 </style>
