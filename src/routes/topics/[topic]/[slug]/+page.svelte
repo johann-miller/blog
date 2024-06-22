@@ -32,7 +32,6 @@
             if (response.ok) {
                 markdownContent = await response.text();
                 frontmatter = parseFrontmatter(markdownContent)
-                console.log(frontmatter)
                 parsedMarkdown = parseMarkdown(markdownContent);
             } else {
                 console.error("Failed to fetch Markdown content");
@@ -52,3 +51,7 @@
         {@html parsedMarkdown}
     {/if}
 </article>
+
+<style>
+    /* Todo: style frontmatter */
+</style>
