@@ -20,4 +20,11 @@ body {
         line-height: normal;
         width: 12.6cm;
     }
+
+    h1 {
+        text-align: center !important;
+        font-weight: normal;
+        font-size: 14.4pt !important;
+        margin-bottom: 1.5cm;
+    }
 }

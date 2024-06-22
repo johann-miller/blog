@@ -4,13 +4,13 @@
     import { parseMarkdown } from "$lib/markdownParser.js";
     import { renderMath } from "$lib/renderMath.js";
     import "../../../../style/global.css";
+    import "../../../../data/posts.json"
 
     // Bind articleElement to the article tag
     let articleElement;
     let params;
     $: params = $page.params;
 
-    // export let data;
     export let markdownContent = "";
 
     // Function to re-render KaTeX math on updated content
@@ -40,6 +40,6 @@
     afterUpdate(reRenderMath);
 </script>
 
-<article bind:this={articleElement} on:change={markdownContent} use:renderMath>
+<article bind:this={articleElement} on:change={markdownContent}>
     {@html markdownContent}
 </article>

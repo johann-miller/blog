@@ -1,7 +1,7 @@
 <script>
     import { renderMath } from "$lib/renderMath.js";
     import { onMount } from "svelte";
-    import topics from "../../data/topics.json";
+    import topics from "../../data/postsData.json";
 
     onMount(async () => {});
 </script>

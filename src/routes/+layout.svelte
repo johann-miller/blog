@@ -1,7 +1,7 @@
 <script defer>
     import painting from "$lib/assets/painting3.jpg";
     import { renderMath } from "$lib/renderMath.js";
-    import topics from "../data/topics.json";
+    import topics from "../data/postsData.json";
     import "../style/global.css";
 </script>
 
@@ -40,10 +40,6 @@
         display: flex;
         flex-direction: column;
         height: 18rem;
-    }
-
-    .printed-header {
-        display: none;
     }
 
     .header-image {
