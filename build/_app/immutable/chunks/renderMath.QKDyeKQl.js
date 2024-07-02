@@ -1,1 +1,0 @@
-function t(e){return renderMathInElement(e,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}],throwOnError:!1}),{update(r){renderMathInElement(e,r)},destroy(){}}}export{t as r};
