@@ -7,7 +7,7 @@ const repoName = 'blog'; // Replace 'your-repo-name' with your actual repository
 const config = {
 	kit: {
 		adapter: adapter({
-			fallback: '404.html'
+			
 		}),
 		paths: {
 			base: dev ? '' : `/${repoName}`
