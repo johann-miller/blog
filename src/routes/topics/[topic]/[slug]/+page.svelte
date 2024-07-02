@@ -74,7 +74,7 @@
     .local-navigation-bar {
         font-size: 0.8rem;
         margin-bottom: 2rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         border-bottom: 1px solid #bebebe;
     }
 
