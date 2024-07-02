@@ -1,0 +1,51 @@
+export const manifest = (() => {
+function __memo(fn) {
+	let value;
+	return () => value ??= (value = fn());
+}
+
+return {
+	appDir: "_app",
+	appPath: "_app",
+	assets: new Set([".nojekyll","favicon.png","topics/algebra/post1.md","topics/calculus/post2.md"]),
+	mimeTypes: {".png":"image/png",".md":"text/markdown"},
+	_: {
+		client: {"start":"_app/immutable/entry/start.kzoEec3I.js","app":"_app/immutable/entry/app.CVz_CsrZ.js","imports":["_app/immutable/entry/start.kzoEec3I.js","_app/immutable/chunks/entry.CwHr88C2.js","_app/immutable/chunks/scheduler.BoTHuIgY.js","_app/immutable/entry/app.CVz_CsrZ.js","_app/immutable/chunks/scheduler.BoTHuIgY.js","_app/immutable/chunks/index.BVOkSfYf.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
+		nodes: [
+			__memo(() => import('./nodes/0.js')),
+			__memo(() => import('./nodes/1.js')),
+			__memo(() => import('./nodes/2.js')),
+			__memo(() => import('./nodes/3.js')),
+			__memo(() => import('./nodes/4.js'))
+		],
+		routes: [
+			{
+				id: "/",
+				pattern: /^\/$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 2 },
+				endpoint: null
+			},
+			{
+				id: "/topics",
+				pattern: /^\/topics\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 3 },
+				endpoint: null
+			},
+			{
+				id: "/topics/[topic]/[slug]",
+				pattern: /^\/topics\/([^/]+?)\/([^/]+?)\/?$/,
+				params: [{"name":"topic","optional":false,"rest":false,"chained":false},{"name":"slug","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0,], errors: [1,], leaf: 4 },
+				endpoint: null
+			}
+		],
+		matchers: async () => {
+			
+			return {  };
+		},
+		server_assets: {}
+	}
+}
+})();
