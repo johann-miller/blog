@@ -10,6 +10,7 @@
     let articleElement;
     let params;
     let frontmatter;
+    let topic;
     $: params = $page.params;
 
     export let markdownContent = "";
@@ -24,7 +25,7 @@
 
     onMount(async () => {
         try {
-            let topic = params.topic;
+            topic = params.topic;
 
             const response = await fetch(
                 `/topics/${topic}/${params.slug}.md`,
@@ -48,6 +49,13 @@
     {#if parsedMarkdown}
         <h1 class="title">{frontmatter.title}</h1>
         <h2 class="subtitle">{frontmatter.author} - {frontmatter.date}</h2>
+        <div class="local-navigation-bar">
+            <a href="/">Home</a>
+            <span>&gt</span>
+            <a href="/topics">Topics</a>
+            <span>&gt</span>
+            <a href="/topics#{topic}">{topic}</a>
+        </div>
         {@html parsedMarkdown}
     {/if}
 </article>
@@ -58,12 +66,27 @@
         margin-bottom: 0;
     }
     .subtitle {
-        margin-top: 0;
-        margin-bottom: 2rem;
-        padding-bottom: 0.5rem;
+        margin: 0 0 1rem 0;
         font-size: 1rem;
         font-weight: normal;
+    }
+
+    .local-navigation-bar {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
         border-bottom: 1px solid #bebebe;
+    }
+
+    .local-navigation-bar a {
+        text-decoration: none;
+        color: grey;
+        text-transform: capitalize;
+        transition: color 0.1s ease;
+    }
+
+    .local-navigation-bar a:hover {
+        color: black;
     }
 
     @media print {
@@ -73,6 +96,9 @@
         .subtitle {
             text-align: center;
             font-size: 11pt;
+        }
+        .local-navigation-bar {
+            display: none;
         }
     }
 </style>

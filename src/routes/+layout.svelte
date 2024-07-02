@@ -101,7 +101,7 @@
         padding: 0.25rem;
         margin: 0.25rem;
         border-bottom: 1px solid transparent;
-        transition: border-color 0.3s ease;
+        transition: border-color 0.1s ease;
     }
 
     nav ul li a:hover {
@@ -139,7 +139,7 @@
       }
 
       footer {
-        margin-top: 0;
+        display: none;
       }
     }
 </style>
