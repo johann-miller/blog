@@ -1,15 +1,15 @@
 import adapter from '@sveltejs/adapter-static';
 
-const dev = process.env.NODE_ENV === 'development';
-const repoName = 'blog'; // Replace with your actual GitHub repository name
-
-const config = {
+export default {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: null,
+      precompress: false
+    }),
     paths: {
-      base: dev ? '' : `/${repoName}`
+      base: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
     }
   }
 };
-
-export default config;

@@ -1,10 +1,10 @@
 <script>
+    import { base } from '$app/paths'
     import { onMount, afterUpdate } from "svelte";
     import { page } from "$app/stores";
     import { parseMarkdown, parseFrontmatter } from "$lib/markdownParser.js";
     import { renderMath } from "$lib/renderMath.js";
     import "../../../../style/global.css";
-    import { findPost } from "$lib/postUtils.js";
 
     // Bind articleElement to the article tag
     let articleElement;
@@ -28,7 +28,7 @@
             topic = params.topic;
 
             const response = await fetch(
-                `/topics/${topic}/${params.slug}.md`,
+                base + `/topics/${topic}/${params.slug}.md`,
             );
             if (response.ok) {
                 markdownContent = await response.text();
@@ -50,11 +50,11 @@
         <h1 class="title">{frontmatter.title}</h1>
         <h2 class="subtitle">{frontmatter.author} - {frontmatter.date}</h2>
         <div class="local-navigation-bar">
-            <a href="/">Home</a>
+            <a href="{base}/">Home</a>
             <span>&gt</span>
-            <a href="/topics">Topics</a>
+            <a href="{base}/topics">Topics</a>
             <span>&gt</span>
-            <a href="/topics#{topic}">{topic}</a>
+            <a href="{base}/topics#{topic}">{topic}</a>
         </div>
         {@html parsedMarkdown}
     {/if}

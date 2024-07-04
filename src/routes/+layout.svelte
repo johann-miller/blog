@@ -1,4 +1,5 @@
 <script defer>
+    import { base } from '$app/paths'
     import painting from "$lib/assets/pic4.jpg";
     import { renderMath } from "$lib/renderMath.js";
     import topics from "../data/postsData.json";
@@ -8,12 +9,12 @@
 <header class="header-container">
     <nav>
         <ul use:renderMath>
-            <li><a href="/" class="home-link">Drew's nook</a></li>
+            <li><a href="{base}/" class="home-link">Drew's nook</a></li>
             <li><span>$\cdot$</span></li>
             {#each topics as topic}
-            <li><a href="/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
+            <li><a href="{base}/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
             {/each}
-            <li><a href="/topics">All topics</a></li>
+            <li><a href="{base}/topics">All topics</a></li>
         </ul>
     </nav>
 
