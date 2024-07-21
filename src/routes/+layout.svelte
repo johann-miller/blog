@@ -1,6 +1,6 @@
 <script defer>
     import { base } from '$app/paths'
-    import painting from "$lib/assets/pic4.jpg";
+    import painting from "$lib/assets/pic3.jpg";
     import { renderMath } from "$lib/renderMath.js";
     import topics from "../data/postsData.json";
     import "../style/global.css";
@@ -10,7 +10,7 @@
     <nav>
         <ul use:renderMath>
             <li><a href="{base}/" class="home-link">Drew's nook</a></li>
-            <li><span>$\cdot$</span></li>
+            <li class="dash">-</li>
             {#each topics as topic}
             <li><a href="{base}/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
             {/each}
@@ -30,7 +30,7 @@
     <slot></slot>
     <footer use:renderMath>
         Comments? Corrections? <span class="dash">-</span>
-        drewsnook@gmail.com <span class="dash">-</span> Copyright 2024
+        email@email.com <span class="dash">-</span> Copyright 2024
     </footer>
 </div>
 
