@@ -22,10 +22,6 @@
     <span class="image-credit">"Harvest in Ukraine" - Vladimir Orlovsky</span>
 </header>
 
-<div>
-
-</div>
-
 <div id="main-container">
     <slot></slot>
     <footer>
