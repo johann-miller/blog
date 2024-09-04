@@ -8,13 +8,13 @@
 
 <header class="header-container">
     <nav>
-        <ul use:renderMath>
+        <ul>
             <li><a href="{base}/" class="home-link">Drew's nook</a></li>
             <li class="dash">-</li>
             {#each topics as topic}
             <li><a href="{base}/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
             {/each}
-            <li><a href="{base}/topics">All topics</a></li>
+            <li><a href="/blog/topics">All topics</a></li>
         </ul>
     </nav>
 
@@ -28,7 +28,7 @@
 
 <div id="main-container">
     <slot></slot>
-    <footer use:renderMath>
+    <footer>
         Comments? Corrections? <span class="dash">-</span>
         email@email.com <span class="dash">-</span> Copyright 2024
     </footer>
