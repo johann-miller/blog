@@ -9,7 +9,7 @@
 <header class="header-container">
     <nav>
         <ul>
-            <li><a href="{base}/" class="home-link">Drew's nook</a></li>
+            <li><a href="{base}" class="home-link">Drew's nook</a></li>
             <li class="dash">-</li>
             {#each topics as topic}
             <li><a href="{base}/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
@@ -29,8 +29,7 @@
 <div id="main-container">
     <slot></slot>
     <footer>
-        Comments? Corrections? <span class="dash">-</span>
-        email@email.com <span class="dash">-</span> Copyright 2024
+        Comments? Corrections? Sorry I don't have an email for this yet.
     </footer>
 </div>
 
