@@ -9,7 +9,7 @@ export default {
       precompress: false
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
+      base: process.env.NODE_ENV === 'production' ? '/blog' : '',
     }
   }
 };
