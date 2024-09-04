@@ -9,7 +9,7 @@
 <header class="header-container">
     <nav>
         <ul>
-            <li><a href="{base}" class="home-link">Drew's nook</a></li>
+            <li><a href="/blog" class="home-link">Drew's nook</a></li>
             <li class="dash">-</li>
             {#each topics as topic}
             <li><a href="{base}/topics#{topic.name}" class="capitalize">{topic.name}</a></li>
